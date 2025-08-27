@@ -17,6 +17,10 @@ const App = () => {
 
   const [darkMode, setDarkMode] = useState("dark");
 
+  const [showHistory, setShowHistory] = useState(false);
+
+  // const [showHistory, setShowHistory] = useState(false);
+
   useEffect(() => {
     // console.log(darkMode);
     if (darkMode == "dark") {
@@ -104,24 +108,27 @@ const App = () => {
 
   return (
     <div className={darkMode == "dark" ? "dark" : "light"}>
-      <div className="grid grid-cols-5 h-screen text-center">
+      <div className="grid grid-cols-1 md:grid-cols-5 h-screen text-center">
         <select
           onChange={(event) => setDarkMode(event.target.value)}
-          className="fixed dark:bg-zinc-800 dark:text-zinc-200 bg-red-100 text-zinc-800 bottom-0 p-5"
+          className="fixed dark:bg-zinc-800 dark:text-zinc-200 bg-red-100 text-zinc-800 bottom-0 p-2 rounded-md text-sm sm:text-base"
         >
           <option value="dark">Dark</option>
           <option value="light">Light</option>
         </select>
+
         <RecentHistory
+          className="md:col-span-1"
           recentHistory={recentHistory}
           setSelectedHistory={setSelectedHistory}
           setRecentHistory={setRecentHistory}
         />
 
-        <div className="col-span-4 p-10">
-          <h1 className=" p-5 text-4xl bg-clip-text text-transparent bg-gradient-to-r from bg-pink-700 to-violet-700">
-            {" "}
-            Hello User, Ask Me Anything{" "}
+        {/* main content area */}
+
+        <div className="col-span-1 md:col-span-4 p-4 sm:p-6 md:p-10">
+          <h1 className="p-3 text-2xl sm:text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-pink-700 to-violet-700">
+            Hello User, Ask Me Anything
           </h1>
 
           {loader ? (
@@ -154,7 +161,7 @@ const App = () => {
               </ul>
             </div>
           </div>
-          <div className="dark:bg-zinc-800 bg-red-100 w-1/2 p-1 pr-5 dark:text-white text-zinc-800  m-auto border border-zinc-700 rounded-4xl h-16 flex">
+          <div className="dark:bg-zinc-800 bg-red-100 w-full md:w-1/2 sm:w-3/4 p-1 pr-3 dark:text-white text-zinc-800  m-auto border border-zinc-700 rounded-4xl h-12 flex">
             <input
               type="text"
               value={question}

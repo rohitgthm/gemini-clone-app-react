@@ -23,8 +23,8 @@ const RecentHistory = ({
 
   return (
     <>
-      <div className="col-span-1 dark:bg-zinc-800 bg-red-100 pt-3">
-        <h1 className="text-xl dark:text-white text-zinc-800 flex justify-center">
+      <div className="col-span-1 dark:bg-zinc-800 bg-blue-50 pt-3">
+        <h1 className="text-xl dark:text-white text-zinc-900 flex justify-center">
           {" "}
           <span> Recent Search</span>{" "}
           <button
@@ -50,7 +50,7 @@ const RecentHistory = ({
                 <li
                   onClick={() => setSelectedHistory(item)}
                   key={index} // Or better: use a unique ID if available
-                  className="w-full text-zinc-400 truncate p-1 pl-5 px-5 cursor-pointer dark:hover:bg-zinc-700 dark:hover:text-zinc-200 hover:bg-red-50 hover:text-zinc-800"
+                  className="w-full text-zinc-600 truncate p-1 pl-5 px-5 cursor-pointer dark:hover:bg-zinc-700 dark:hover:text-zinc-200 hover:bg-white hover:text-zinc-900"
                 >
                   {item}
                 </li>
